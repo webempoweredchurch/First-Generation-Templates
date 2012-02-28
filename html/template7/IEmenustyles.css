@@ -1,0 +1,53 @@
+/* 
+ *		Horizontal, top-2-bottom menu ## Tweaks for IE5, IE6
+ *		Copyright Aleksandar Vacic, www.aplus.co.yu, some rights reserved http://creativecommons.org/licenses/by-sa/2.0/
+ */
+
+/*		------	Basic style	------		*/
+
+/* Fix IE6's inability to expand clickable area */
+#menu li a {
+	position: relative;
+}
+
+/* IE can't handle display, so fail-over to visibility */
+#menu li ul {
+	display: block;
+	visibility: hidden;
+	background:#fff;/* adding a bg color to make sure the drop down menu will work properly in IE, otherwise, the will drop down will dispear as scrolling down */
+}
+
+
+/* simulate child selector for IE */
+#menu li:hover ul,
+#menu li:hover li:hover ul,
+#menu li:hover li:hover li:hover ul {
+	visibility: visible;
+}
+#menu li:hover li ul,
+#menu li:hover li:hover li ul,
+#menu li:hover li:hover li:hover li ul {
+	visibility: hidden;
+}
+
+#menuList {
+height: auto;
+}
+
+* html #menu{
+height:1%;
+}
+
+/*		------   Make-up	--------			*/
+
+#menu a:hover {
+	color: #000;
+	background: transparent;
+}
+
+#menu li li a:hover {
+	color: #000;
+	background: transparent;
+}
+
+/* 	------	Behaviors --------		*/

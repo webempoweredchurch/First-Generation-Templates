@@ -1,0 +1,1012 @@
+/* 
+	Copyright notice
+
+	(c) 2007-2008 Christian Technology Ministries International Inc.
+	All rights reserved
+
+	This template is part of the Web-Empowered Church (WEC)
+	(http://WebEmpoweredChurch.org) ministry of Christian Technology Ministries 
+	International (http://CTMIinc.org). The WEC is developing TYPO3-based
+	(http://typo3.org) free software for churches around the world. Our desire
+	is to use the Internet to help offer new life through Jesus Christ. Please
+	see http://WebEmpoweredChurch.org/Jesus.
+
+	You can redistribute this template and/or modify it under the terms of the 
+	GNU General Public License as published by the Free Software Foundation;
+	either version 2 of the License, or (at your option) any later version.
+
+	The GNU General Public License can be found at
+	http://www.gnu.org/copyleft/gpl.html.
+
+	This template is distributed in the hope that it will be useful for ministry,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	This copyright notice MUST APPEAR in all copies of the template! 
+*/
+
+/************ Standard HTML Elements ************/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana,Tahoma,Helvetica,sans-serif;
+	font-size: 0.7em;
+	font-size-adjust: none;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #666666;
+	text-align: center;
+	background: #DFE1B8 url(images/bg.jpg) repeat-x;
+}
+
+a:link, a:visited {
+	background-color: inherit;
+	text-decoration: underline;
+	color: #8B4800;
+}
+
+a:hover, a:active{
+	background-color: inherit;
+	color: #9EC068;
+}
+
+p, h1, h2, h3 {
+	margin: 10px 15px;
+	
+	
+	margin-left: 0px;
+}
+
+h1, h2, h3 {
+	color: #333333;
+	font-family: 'Trebuchet MS',Arial,Sans-serif;
+	font-size: 1em;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: normal;
+}
+
+h1 {
+	color:#8B4800;
+	font-size: 1.5em;
+}
+h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.3em;
+}
+
+input,
+textarea {
+	border: 1px solid #EEEEEE;
+	color: #777777;
+	font-family: Verdana,sans-serif;
+	font-size: 1em;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+	padding: 2px;
+	margin-left: 0px;
+}
+
+input[type="submit"] {
+	background: #FFFFFF none repeat scroll 0%;
+	border: 1px solid #CCCCCC;
+	color: #8B4800;
+	font-family: Arial,Sans-serif;
+	font-size: 1em;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: normal;
+	margin: 0pt;
+	padding: 2px 3px;
+}
+
+label {
+	display: block;
+}
+
+ul, ol {
+	margin: 10px 30px;
+	padding: 0pt 15px;
+}
+
+hr {
+	color: none;
+	border: 1px solid #cccccc;
+}
+
+/* Use a break with this class to clear float containers on both sides */ 
+.brclear { 
+	clear: both; 
+	height: 0; 
+	margin: 0; 
+	font-size: 1px; 
+	line-height: 0;
+} 
+/**************wrapper*******************/
+
+#wrapper {
+	width: 820px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	background: #fff;
+}
+
+
+/********************************************/
+/*******  header                  ***********/
+/********************************************/ 
+#header {
+	position: relative;
+	height: 95px;	
+	background: url(images/headerbg.gif) repeat-x 0% 100%;
+}
+
+#logo {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	float: left;
+}
+
+#logo img {
+	padding-right: 5px;
+}
+
+#sitename {
+	padding-top: 7px;
+}
+
+#sitename h1 {
+	font-family: 'Trebuchet MS',Arial,Sans-serif;
+	font-size: 2.5em;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bolder;
+	left: 5px;
+	letter-spacing: -2px;
+	line-height: normal;
+	margin: 0pt 7pt;
+	padding: 0px;
+}
+
+
+#sitename h1 a {
+	text-decoration: none;
+}
+
+#slogan h2 {
+	margin: 0pt 7pt;
+	padding: 0pt;
+	line-height: 1em;
+}
+
+/*************search********************/
+#search{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px 5px 0 0;
+	padding: 0;
+	text-align: right;
+	font-size : 100%;
+	color : #666666;
+}
+
+#search input[type=text] {
+	background: #FFFFFF none repeat scroll 0%;
+	border: 1px solid #9EC630;
+	color: #333333;
+	height: 14px;
+	margin: 0pt;
+	vertical-align: top;
+	width: 120px;
+}
+
+#search input[type=submit] {
+	background: #FAFAFA none repeat scroll 0%;
+	border: 1px solid #F2F2F2;
+	color: #777777;
+	font-family: Arial,Sans-serif;
+	font-size: 11px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: normal;
+	margin: 0pt 0pt 0pt 3pt;
+	padding: 2px 3px;
+	vertical-align: top;
+	width: 60px;
+}
+
+#left-part{
+	width: 155px;
+	margin: 12px 7px 15px 7px;
+	padding: 0;
+	float: left;
+}
+
+#left ul,
+#left ol {
+	margin-left: 0px;
+}
+
+
+#login-wrapper {
+	padding: 3px;
+	margin-bottom: 1em;
+	background-color:#FAFAFA;
+	border: 1px solid #F2F2F2;
+}
+
+#login form {
+	background-color: none;
+	border: none;
+}
+
+#login a {
+	font-size: smaller;
+}
+
+#right-part { 
+	width: 633px;
+	padding :0;
+	margin:  12px 10px 15px 0;
+	float:right;
+}
+
+/* @todo 	jeff	I assume this is an IE hack */
+* html #right-part { 
+	margin:  15px 5px 15px 0;
+} 
+
+#pagetitle {
+	color: #9EC630;
+	font-size: 2em;
+	font-family: 'Trebuchet MS',Arial,Sans-serif;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: normal;
+}
+
+#footer {
+	height: 100px;
+	background: #DFE1B8 none repeat scroll 0%;
+	border-top: 5px solid #AF6F00;
+	color: #FFFFFF;
+	font-size: 95%;
+	margin: 0pt;
+	padding: 15pt 0pt 0pt 0pt;
+	bottom: 0;
+	clear: both;
+}
+
+#footer .footer-left {
+	float: left;
+	width: 47%;
+}
+
+#footer .footer-right {
+	float: right;
+	width: 30%;
+}
+
+#footer a {
+	color: #FFFFFF;
+}
+
+#bottomnav {
+	text-align: right;
+}
+
+/** Main menu **/
+
+#menu ul#menuList{
+	bottom: 6px !important;
+	font-family: Arial,'Trebuchet MS',Tahoma,verdana,sans-serif;
+	font-size: 13px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: normal;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0pt;
+	padding: 0pt;
+	position: absolute;
+	right: 0pt;
+	z-index: 8;
+}
+
+* html #menu ul#menuList {
+	bottom: 4px !important;
+}
+
+/* Sliding Doors */
+#menu a {
+	background: transparent url(images/tableft.gif) no-repeat scroll left top;
+	float: left;
+	margin: 0pt;
+	padding: 0pt 0pt 0pt 4px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+#menu a:hover,
+#menu .active a {
+	background-position: 0% -42px;
+}
+#menu li:hover a {
+	background-position: 0% -42px;
+	cursor: pointer;
+}
+#menu a span {
+	background: transparent url(images/tabright.gif) no-repeat scroll right top;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	padding: 6px 15px 3px 8px;
+}
+#menu a:hover span, 
+#menu .active a span {
+	background-position:100% -42px;
+}
+#menu li:hover a span {
+	background-position:100% -42px;
+}
+
+
+#menu ul#menuList li ul {
+	display: none;
+	position: absolute;
+	width: 130px;
+	margin: 0pt;
+	padding: 0pt;
+	background: #83acca;
+}
+
+#menu ul#menuList li ul.level2 {
+	top: 1.75em !important;
+	padding: 5px 0px 5px 0px;
+	left: 0;
+}
+
+#menu ul#menuList li ul.level2 li:hover ul {
+	display: block;
+}
+
+#menu ul#menuList ul.level3 {
+	margin:-5px 0px 0px -3px;
+	padding:5px 0px;
+}
+
+#menu ul#menuList li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+#menu ul#menuList li:hover ul.level2 {
+	display: block;
+}
+
+#menu ul#menuList li ul li {
+	display: block;
+	width: 100%;
+/*	position: relative; */
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu li ul li a {
+	text-transform: none;
+	text-decoration: none;
+	text-align: left;
+	padding: 2px 13px;
+	margin: 0  0;
+	background: #83acca;
+	width: 104px;
+}
+
+
+#menu li ul li a:hover,
+#menu li ul li.active a {
+	background-color: #4284B0;
+}
+
+#menu li ul li:hover > a {
+	background-color: #4284B0;
+}
+
+#menu li li ul {
+	display: block;
+	top: 0px;
+	left: 133px;
+	border-left: 4px solid #4284B0;
+}
+
+/* IE can't handle display, so fail-over to visibility */
+* html #menu ul#menuList li ul.level2,
+* html #menu ul#menuList li ul.level3 {
+	display: block;
+	visibility: hidden;
+}
+
+/* simulate child selector for IE */
+* html #menu ul#menuList li:hover ul.level2,
+* html #menu ul#menuList li:hover ul.level2 li:hover ul.level3,
+* html #menu ul#menuList li:hover ul.level2 li:hover ul.level3 li:hover ul.level4 {
+	visibility: visible;
+}
+
+* html #menu ul#menuList li:hover ul.level2 li ul.level3,
+* html #menu ul#menuList li:hover ul.level2 li:hover ul.level3 li ul.level4 {
+	visibility: hidden;
+	clear: both;
+}
+
+
+/*******************************************/
+/************* Extension Styles *************/
+/*******************************************/
+.tx-wecdevo-pi1 {z-index: 7;}
+/************ tt_news extension ***********************/
+
+
+/*-----------------------------------  clearer  -----------------------------------*/
+/* prevent floated images from overlapping the div-containers they are wrapped in  */
+
+.news-list-container HR.clearer, .news-single-item HR.clearer, .news-latest-container HR.clearer{
+	display: none;
+	clear:right;
+}
+
+.news-latest-container HR.clearer {
+	clear:left;
+}
+
+/*-----------------------------------  tt_news LATEST view  -----------------------------------*/
+
+.news-latest-item,
+.news-list-item {
+	margin-bottom: 20px;
+}
+
+.news-latest-gotoarchive {
+	font-weight:bold;
+	margin-top:5px;
+	color:#369;
+	padding:3px;
+}
+.news-latest-gotoarchive A:LINK, 
+.news-latest-gotoarchive A:VISITED, 
+.news-latest-gotoarchive A:HOVER {
+	color:#060;
+}
+.news-latest-gotoarchive A {
+	color:#369;
+	font-size: .9em;
+}
+
+.news-latest-item IMG {
+	margin-bottom:5px;
+	margin-right:5px;
+	border:1px solid #666;
+	float:left;
+}
+.news-latest-category IMG {
+	float: none;
+	border:none;
+	margin:0px;
+}
+
+.news-latest-container a {
+	text-decoration: none;
+}
+
+.news-latest-container hr {
+	display: none;
+}
+
+.news-latest-footer {
+	background-color:#FAFAFA;
+	border:1px solid #F2F2F2;
+	font-size:95%;
+	padding:5px;
+	margin-top: 5px;
+}
+
+.news-latest-morelink a,
+.news-list-morelink a {
+	background:transparent url(images/page.gif) no-repeat scroll left center;
+	margin:0pt 10px 0pt 5px;
+	padding-left:20px;
+	text-decoration: none;
+}
+
+.news-latest-date,
+.news-list-date {
+	background:transparent url(images/clock.gif) no-repeat scroll left center;
+	margin:0pt 10px 0pt 5px;
+	padding-left:20px;
+	text-decoration: none;
+}
+
+.news-latest-item h3 a,
+.news-list-item h3 a {
+	text-decoration: none;
+}
+
+/*--------------------------------- tt_news LIST view  -----------------------------------*/
+.news-search-form {
+	padding:3px;
+	margin-bottom:5px;
+}
+
+.news-search-emptyMsg{
+	margin:0px;
+}
+
+.news-search-form FORM {
+	margin:0px;
+}
+
+
+.news-list-imgcaption {
+	float: right;
+	padding-top:3px;
+	padding-right:3px;
+	font-size: 9px;
+}
+.news-list-container IMG {
+	float: right;
+	border:1px solid #666;
+	margin-bottom:5px;
+	margin-right:2px;
+	margin-left:5px;
+}
+.news-list-category IMG {
+	float: none;
+	border:none;
+	margin:0px;
+}
+.news-list-browse {
+	text-align: center;
+}
+
+
+#main-content .news-search-form {
+	padding:3px;
+	margin-bottom:5px;
+	/*border:1px solid #666;
+	background-color:#F9FFE5;*/
+}
+#main-content .news-search-emptyMsg{
+	margin:0px;
+}
+#main-content .news-search-form FORM {
+	margin:0px;
+}
+
+#main-content .news-list-imgcaption {
+	float: right;
+	padding-top:3px;
+	padding-right:3px;
+	font-size: 9px;
+}
+#main-content .news-list-container IMG {
+	float: right;
+	border:1px solid #666;
+	margin-bottom:5px;
+	margin-right:2px;
+	margin-left:5px;
+}
+#main-content .news-list-category IMG {
+	float: none;
+	border:none;
+	margin:0px;
+}
+#main-content .news-list-browse {
+	text-align: center;
+}
+
+	/*---------------------------------  tt_news Page-Browser ---------------------------------*/
+.tx-ttnews-browsebox {
+	margin:3px;
+	border:1px solid #666;
+	padding:3px;
+}
+.tx-ttnews-browsebox TD {
+	font-size: .8em;
+}
+.tx-ttnews-browsebox-strong, .tx-ttnews-browsebox-SCell {
+	font-weight: bold;
+}
+.tx-ttnews-browsebox-SCell P,
+.tx-ttnews-browsebox TD P{
+	margin:0px;
+}
+.tx-ttnews-browsebox-SCell {
+	background-color: #693;
+	border:1px solid #666;
+	color: #fff;
+}
+.tx-ttnews-browsebox-SCell a:link, 
+.tx-ttnews-browsebox-SCell a:visited {
+	font-size: 1em;
+	color: #fff;
+}
+.tx-ttnews-browsebox-SCell a:hover, 
+.tx-ttnews-browsebox-SCell a:active{
+	color: #ffc;
+}
+.tx-ttnews-browsebox a:link, 
+.tx-ttnews-browsebox a:visited {
+	font-size: 1em;
+	color: #369;
+}
+.tx-ttnews-browsebox a:hover, 
+.tx-ttnews-browsebox a:active{
+	color: #369;
+}
+.news-search-emptyMsg {
+	font-size: .9em;
+	margin-left: 10px;
+
+}
+
+/*--------------------------------- tt_news Archivemenu (AMENU) --------------------------------- */
+.news-amenu-container {
+	margin-top:5px;
+	padding:3px;
+	border:1px solid #333;
+
+}
+.news-amenu-container LI {
+	padding-bottom:3px;
+}
+.news-amenu-container UL {
+	padding:3px;
+	margin-top:5px;
+	margin-left:0px;
+	margin-bottom:0px;
+	list-style-type: none;
+}
+.news-amenu-container H2 {
+	color:#369;
+	padding:3px;
+	font-size: 1.1em;
+}
+.news-amenu-item-year {
+	font-weight: bold;
+	/*border: 1px solid #666;*/
+    border-bottom: 1px solid #ccc;
+	padding: 2px;
+    margin: 4px 0px 4px 0px;
+	background-color: #f7f7f7;
+	color:#363
+}
+
+/*--------------------------------- tt_news Categorymenu (CATMENU) --------------------------------- */
+
+.news-catmenu  {
+	padding:5px;
+	margin:10px 0px 10px 10px;
+	border:1px solid #666;
+	background-color:#F9FFE5;
+}
+.news-catmenu-header {
+	font-size:.9em;
+	font-weight:bold;
+}
+.news-catmenu DIV {
+	font-size:10px;
+	white-space: nowrap;
+}
+.news-catmenu DIV img, 
+.news-catmenu img, 
+.news-catmenu-header img {
+	margin:0px;
+	padding: 0px;
+	vertical-align: middle;
+}
+.news-catmenu-ACT {
+
+	font-weight:bold;
+}
+
+
+/********* default styles for extension "tx_srfeuserregister_pi1" *********/
+
+  /* WEC-MMS: Commented out the styles below */
+* html .tx-srfeuserregister-pi1{ 
+	margin-right:-10px;
+}
+
+* html div.tx-srfeuserregister-pi1 label.tx-srfeuserregister-pi1-password-again{ 
+	margin-left:-5px;
+}
+
+
+.tx-indexedsearch {
+	margin-top: 5px;
+}
+
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr .tx-indexedsearch-redMarkup {
+	font-weight: bold;
+	color: inherit;
+}
+
+
+/********* Styles for extension "tx_veguestbook_pi1" *********/
+
+.tx-guestbook-list-header { 
+	background-color: #9ACC99; 
+	color: #FFFFFF; 
+	font-weight:bold; 
+}
+.tx-guestbook-list-row { 
+	background-color: #FFFFFF; 
+}
+.tx-guestbook-list-rowleft { 
+	background-color: #E2F0D4; 
+}
+.tx-guestbook-list-entrycomment-title {
+	font-weight: bold; 
+}
+.tx-guestbook-list-entrycomment { 
+	font-style: italic; 
+}
+.tx-guestbook-list-small { 
+	font-size: 9px; 
+	color: #666666; 
+}
+.tx-veguestbook-pi1-browsebox TD { 
+	font-size: 9px; 
+	color: #666666; 
+}
+.tx-veguestbook-pi1-browsebox-strong,
+.tx-ttnews-browsebox-SCell { 
+	font-weight: bold; 
+}
+.tx-veguestbook-pi1-browsebox-SCell { 
+	background-color: #EEEEEE; 
+}
+.tx-guestbook-latest-header { 
+	background-color: #539521; 
+	color: #FFFFFF; 
+	font-weight:bold; 
+}
+.tx-guestbook-latest-row { 
+	background-color: #FFFFFF; 
+}
+.tx-guestbook-latest-small { 
+	font-size: 9px; 
+	color: #666666; 
+}
+.tx-guestbook-form-inputfield-med { 
+	border-style: solid; 
+	border-width: 1pt; 
+	border-color:#333; 
+	font-size:12px; 
+	color:#333333; 
+	width:100px; 
+	height:20px; 
+}
+.tx-guestbook-form-inputfield-big { 
+	border-style: solid; 
+	border-width: 1pt; 
+	border-color:#333; 
+	font-size:12px; 
+	color:#333333; 
+	width:150px; 
+	height:20px; 
+}
+
+.tx-guestbook-form-textarea { 
+	width: 250px; 
+}
+
+.tx-guestbook-form-obligationfield { 
+	color: #CC0000; 
+}
+.tx-guestbook-form-error { 
+	color: #CC0000; 
+}
+
+.tx-veguestbook-pi1 label.radio-label {
+	display: inline;
+}
+
+/* HEADER BOX BEGIN */
+
+.header_center { 
+	text-align: center; 
+	height: 34px;
+}
+.header_text {
+	font-size: 24px;
+	line-height: 34px; 
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.header_small {	
+	margin-bottom: 3px;
+	border: solid #000000 1px;
+}
+
+
+/********* Styles for extension "tx_mmforum" *********/
+th.tx-mmforum-th {
+	color: black;
+	background: rgb(183, 219, 147);
+}
+
+td.tx-mmforum-subth2 {
+	color: black;
+	background: rgb(248, 252, 244);
+}
+
+.tx-mmforum-td  {
+	background: rgb(226, 240, 212);
+}
+
+input.tx-mmforum-button {
+	background: rgb(183, 219, 147);
+	border-color: rgb(183, 219, 147);
+}
+
+.tx-mmforum-textbutton {
+	background: none;
+	border: none;
+}
+
+.tx-mmforum-textbutton a {
+	text-decoration: none;
+}
+
+
+/********* Styles for extension "wec_servant" *********/
+.tx-wecservant-button a {
+	border: solid 1px rgb(183, 219, 147) !important;
+}
+.tx-wecservant-button a:link, .tx-wecservant-button a:visited {
+	background-color: rgb(248, 252, 244);
+	color: black !important;
+} 
+
+.tx-wecservant-button a:hover {
+	background-color: rgb(183, 219, 147);
+	color: white !important;
+}
+
+/********* Styles for extension "wec_connector" *********/
+.tx-wecconnector-button a {
+	border: solid 1px rgb(183, 219, 147) !important;
+}
+.tx-wecconnector-button a:link, .tx-wecconnector-button a:visited {
+	background-color: rgb(248, 252, 244);
+	color: black !important;
+} 
+
+.tx-wecconnector-button a:hover {
+	background-color: rgb(183, 219, 147);
+	color: white !important;
+}
+
+
+/********** Styles for wec_staffdirectory **************/
+.tx-wecstaffdirectory-stafflist, 
+.tx-wecstaffdirectory-staffpage {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.tx-wecstaffdirectory-stafflist .float-med {
+	padding-left: 0px;
+}
+
+/********** Styles for fe_login ***************/
+.tx-felogin-pi1 fieldset {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.tx-felogin-pi1 legend {
+	display: none;
+}
+
+#login input[type="text"] {
+	width: 95%;
+}
+
+#login #user,
+#login #pass {
+	width: 100px; 
+	font-size: 11px;
+}
+
+.tx-felogin-pi1 input[type="submit"] {
+	margin-top: 5px;
+}
+
+/********** Styles for wec_button ***************/
+#left .tx-wecbutton-pi1 div {
+	text-align: left !important;
+}
+
+.tx-cal-controller .month-large .day {
+	background-color: #ffffff;
+}
+
+.tx-cal-controller .eventfont a {
+	color:#FFFFFF;
+}
+
+/********** Styles for timtab ***************/
+.post h2 a {
+	text-decoration: none;
+}
+
+.post .postmetadata {
+	background-color:#FAFAFA;
+	border:1px solid #F2F2F2;
+	font-size:95%;
+	padding:5px;
+	margin-top: 5px;
+}
+
+.post .comments {
+	background:transparent url(images/comment.gif) no-repeat scroll left center;
+	margin:0pt 10px 0pt 5px;
+	padding-left:20px;
+	text-decoration: none;
+}
+
+/************ Styles for ve_guestbook ***********/
+.tx-veguestbook-pi1 ol {
+	color: inherit;
+	margin: 20px;
+	padding: 0;
+}
+
+.tx-cal-controller dt {
+    margin-top: 8px;
+}
+
+.tx-cal-controller dt.day-wrapper {
+    font-size: 130%;
+}
+
+.tx-cal-controller dd {
+    margin-left: 0px;
+}

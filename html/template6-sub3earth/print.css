@@ -1,0 +1,18 @@
+body {
+background: none;
+}
+#header,
+#left-col,
+#right-col,
+#footer,
+.breadcrumb {
+display: none;
+}
+#center-col {
+width: 98%;
+padding:0px 0px;
+}
+#outer-wrapper,
+#inner-wrapper {
+background: none;
+}

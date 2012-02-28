@@ -1,0 +1,135 @@
+<attach event="ondocumentready" handler="_ParseStylesheets" />
+<script language="JScript">
+/**
+ *	ADxMenu behavior - standard - v0.2
+ *	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ *	(c) 2004 - Aleksandar Vacic, www.aplus.co.yu
+ * Some rights reserved, http://creativecommons.org/licenses/by-sa/2.0/
+ *	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Based on PSEUDOS V1.20.040828
+ *	http://www.xs4all.nl/~peterned/csshover.html
+ *	(c) 2004 - Peter Nederlof
+ *	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ */
+
+var _oCurrentSheet, _oDoc = window.document;
+var _aActivators = {
+	onhover:{on:'onmouseover', off:'onmouseout'}
+}
+
+//	keeps the menu IDs
+var _aMenuIDs = new Array();
+
+//	find menus on the page - look for class named "adxm"
+function _FindMenus() {
+	var aTmp = xGetElementsByClassName("adxm", element.document, "ul", function(oM) {
+		_Add(oM.id);
+	} );
+};
+
+//	add the menu to the array
+function _Add(sMenuID) {
+	if ( typeof(sMenuID) == "undefined") return;
+	_aMenuIDs[_aMenuIDs.length] = sMenuID.replace(/List/, "");
+};
+
+function _ParseStylesheets() {
+	_FindMenus();
+	var sheets = _oDoc.styleSheets, l = sheets.length;
+	for(var i=0; i<l; i++) 
+		_ParseStylesheet(sheets[i]);
+}
+
+function _ParseStylesheet(sheet) {
+	var l, rules, imports;
+	if(sheet.imports) {
+		imports = sheet.imports, l = imports.length;
+		for(var i=0; i<l; i++) 
+			_ParseStylesheet(sheet.imports[i]);
+	}
+
+	rules = (_oCurrentSheet = sheet).rules, l = rules.length;
+	for(var j=0; j<l; j++) _ParseCSSRule(rules[j]);
+}
+
+function _ParseCSSRule(rule) {
+	var select = rule.selectorText, style = rule.style.cssText;
+	//	work only with #menu
+	var sMenuID, bFound = 0;
+	for (var t=0;t<_aMenuIDs.length;t++) {
+		if (select.indexOf(_aMenuIDs[t]) != -1) {
+			bFound = 1;
+			sMenuID = _aMenuIDs[t];
+			break;
+		}
+	}
+	if (!bFound) return;
+
+	if(!(/(^|\s)(([^a]([^ ]+)?)|(a([^#.][^ ]+)+)):(hover)/i).test(select)) return;
+	
+	var pseudo = select.replace(/[^:]+:([a-z-]+).*/i, 'on$1');
+	var newSelect = select.replace(/(\.([a-z0-9_-]+):[a-z]+)|(:[a-z]+)/gi, '.$2' + pseudo);
+	var className = (/\.([a-z0-9_-]+)/i).exec(newSelect)[1];
+	var affected = select.replace(/:hover.*$/, '');
+
+	//	remove the #menu part
+	eval('affected = affected.replace(/#' + sMenuID + '([ ]+)/i, "")');
+
+	var elements = _GetElementsBySelect(affected, sMenuID);
+
+	_oCurrentSheet.addRule(newSelect, style);
+	for(var i=0; i<elements.length; i++)
+		new _HoverElement(elements[i], className, _aActivators[pseudo]);
+}
+
+function _HoverElement(node, className, events) {
+	if(!node.hovers) node.hovers = {};
+	if(node.hovers[className]) return;
+	node.hovers[className] = true;
+	node.attachEvent(events.on,
+		function() { node.className += ' ' + className; });
+	node.attachEvent(events.off,
+		function() { node.className = 
+			node.className.replace(new RegExp('\\s+'+className, 'g'),''); });
+}
+
+function _GetElementsBySelect(rule, sMenuID) {
+	//	work only inside of the #menu div
+	var parts, nodes = [_oDoc.getElementById(sMenuID)];
+	parts = rule.split(' ');
+	for(var i=0; i<parts.length; i++) {
+		nodes = _GetSelectedNodes(parts[i], nodes);
+	}
+	return nodes;
+}
+
+function _GetSelectedNodes(select, elements) {
+	var result, node, nodes = [];
+	var classname = (/\.([a-z0-9_-]+)/i).exec(select);
+	var identify = (/\#([a-z0-9_-]+)/i).exec(select);
+	var tagName = (/^[a-z0-9]+/i).exec(select.toUpperCase()) || '*';
+	for(var i=0; i<elements.length; i++) {
+		result = elements[i].getElementsByTagName(tagName);
+		for(var j=0; j<result.length; j++) {
+			node = result[j];
+			if((identify && node.id != identify[1]) || (classname && !(new RegExp('\\b' +
+				classname[1] + '\\b').exec(node.className)))) continue;
+			nodes[nodes.length] = node;
+		}
+	}	return nodes;
+}
+
+function xGetElementsByClassName(clsName, parentEle, tagName, fn) {
+	var found = new Array();
+	var re = new RegExp('\\b'+clsName+'\\b', 'i');
+	var list = parentEle.getElementsByTagName(tagName);
+	for (var i = 0; i < list.length; ++i) {
+		if (list[i].className.search(re) != -1) {
+			found[found.length] = list[i];
+			if (fn) fn(list[i]);
+		}
+	}
+	return found;
+}
+
+</script>
